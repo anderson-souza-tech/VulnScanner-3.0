@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado - VulnScanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo Hacker">
+        <h1>Resultado</h1>
+        {% for ferramenta, saida in resultado.items() %}
+            <h2>{{ ferramenta.upper() }}</h2>
+            <pre>{{ saida }}</pre>
+        {% endfor %}
+        {% if arquivo %}
+            <h3>Download:</h3>
+            <a href="{{ url_for('static', filename=arquivo) }}" download>
+                <button>Baixar Resultado .txt</button>
+            </a>
+        {% endif %}
+        <a href="{{ url_for('main.dashboard') }}">Voltar ao Dashboard</a>
+    </div>
+</body>
+</html>
