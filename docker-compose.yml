@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  vuln-api:
+    build: .
+    ports:
+      - "5050:5050"
+    volumes:
+      - ./reports:/home/scanner/app/reports
+    # For a safe environment, prefer separating runner container with tools installed.
