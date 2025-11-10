@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, request, jsonify, send_file
 from uuid import uuid4
 from pathlib import Path
@@ -47,3 +48,15 @@ def get_meta(job_id):
 if __name__ == "__main__":
     # host 0.0.0.0 para aceitar conexões externas (LAN). Porta 5050 por convenção do POC.
     app.run(host="0.0.0.0", port=5050)
+=======
+
+from flask import Flask
+from routes.main import main
+
+app = Flask(__name__)
+app.secret_key = "senha_segura"
+app.register_blueprint(main)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
+>>>>>>> 77bb0758db221a834b1dc1092ec02256af04278d

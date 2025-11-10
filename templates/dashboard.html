@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - VulnScanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="Logo Hacker">
+        <h1>Scanner Completo TCP/UDP + Web</h1>
+        <form method="POST" action="{{ url_for('main.scan') }}">
+            <input type="text" name="target" placeholder="Digite o IP ou domínio" required>
+            <button type="submit">Executar Scan</button>
+        </form>
+    </div>
+</body>
+</html>
